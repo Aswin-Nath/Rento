@@ -1,0 +1,30 @@
+/* Header.css */
+.navbar {
+    background-color: aqua;
+    padding: 1rem;
+  }
+  
+  .navbar-brand {
+    margin-right: 2rem;
+  }
+  
+  
+  .Logo {
+    color: red;
+    text-decoration: none;
+  }
+  
+  .navbar-item {
+    color: red;
+    margin-left: 18rem; /* Adjust the margin for spacing between navbar items */
+    text-decoration: none;
+  }
+  
+  .navbar-item:last-child {
+    margin-right: 0;
+  }
+  
+  .navbar-item:hover {
+    color: black;
+  }
+  
