@@ -1,0 +1,11 @@
+
+ItemsDisplay_Component
+    - Search_Functionality
+    - IndividualHouse_Component
+    - Sort_Component
+MoreDetails_Component
+    - IndividualHouse_Component
+    - MediaDiplayer_Component
+
+
+

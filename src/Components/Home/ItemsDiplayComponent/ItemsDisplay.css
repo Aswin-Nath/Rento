@@ -1,0 +1,55 @@
+.upper-rento {
+    background-color: #D9D9D9;
+    position: relative;
+    bottom: 21px;
+}
+
+.sort-button {
+    position: relative;
+    width: 60px;
+    left: 100px;
+    border-radius: 10px;
+    background-color: red;
+    cursor: pointer;
+}
+
+.search-bar {
+    font-style: italic;
+    position: relative;
+    left: 50px;
+    width: 400px; 
+    bottom: 50px;
+}
+
+/* Sort Panel Animation */
+.sort-panel {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Initially hidden */
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.sort-panel.show {
+    transform: translateX(300px); /* Slide in */
+}
+
+.side-bar{
+    position: fixed;
+    top: 0;
+    left: -700px;
+    width: 600px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    z-index: 300;
+}
+
+.side-bar.show{
+    transform: translateX(700px);
+}
