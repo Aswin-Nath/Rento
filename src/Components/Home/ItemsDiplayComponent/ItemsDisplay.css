@@ -1,55 +1,84 @@
-.upper-rento {
-    background-color: #D9D9D9;
-    position: relative;
-    bottom: 21px;
+.main-content {
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+  padding: 20px;
 }
 
-.sort-button {
-    position: relative;
-    width: 60px;
-    left: 100px;
-    border-radius: 10px;
-    background-color: red;
-    cursor: pointer;
+.upper-rento h1 {
+  font-size: 36px;
+  text-align: center;
+  color: #333;
 }
 
-.search-bar {
-    font-style: italic;
-    position: relative;
-    left: 50px;
-    width: 400px; 
-    bottom: 50px;
+.middle-content {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
-/* Sort Panel Animation */
-.sort-panel {
-    position: fixed;
-    top: 0;
-    left: -300px; /* Initially hidden */
-    width: 250px;
-    height: 100%;
-    background-color: white;
-    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
-    z-index: 1000;
+.search-button .search-bar {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
-.sort-panel.show {
-    transform: translateX(300px); /* Slide in */
+.lower-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.side-bar{
-    position: fixed;
-    top: 0;
-    left: -700px;
-    width: 600px;
-    height: 100%;
-    background-color: white;
-    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
-    z-index: 300;
+.house-content {
+  display: flex;
+  flex-direction: column; /* Display each house in a row */
+  align-items: center;
+  gap: 20px;
 }
 
-.side-bar.show{
-    transform: translateX(700px);
+.house-item {
+  width: 100%; /* Full width to make the house take up the entire row */
+  max-width: 1200px; /* Limit max width for large screens */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.house-item .image-box {
+  width: 100%;
+  height: 300px; /* Make the image box larger */
+  background-color: yellow;
+  margin-bottom: 20px;
+}
+
+.house-item .house-details {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.house-item .house-details p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.house-item .more-details-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.house-item .more-details-button:hover {
+  background-color: #0056b3;
 }

@@ -1,11 +1,16 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';  // Don't import BrowserRouter here
 import './App.css';
-import IndividualHouse from './Components/Home/IndividualHouseComponent/IndividualHouse';
 import ItemsDisplay from './Components/Home/ItemsDiplayComponent/ItemsDisplay';
+import HouseDetails from './Components/Home/HouseDetailsComponent/HouseDetails';
+
 function App() {
   return (
     <div className="App">
-      <ItemsDisplay/>
+      <Routes>
+        <Route path="/" element={<ItemsDisplay />} />
+        <Route path="/house-details/:houseId" element={<HouseDetails />} />
+      </Routes>
     </div>
   );
 }

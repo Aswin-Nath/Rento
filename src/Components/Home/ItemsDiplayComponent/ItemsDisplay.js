@@ -1,27 +1,47 @@
-import React, { useState } from 'react'
-import IndividualHouse from '../IndividualHouseComponent/IndividualHouse'
-import sortButton from "../../../Assets/Images/sort.png";
+import React, { useState, useEffect } from 'react';
+import IndividualHouse from '../IndividualHouseComponent/IndividualHouse';
 import "./ItemsDisplay.css";
 import { TextField, InputAdornment } from '@mui/material';
-import SortComponent from '../SortComponent/SortComponent';
+
 function ItemsDisplay() {
-  const houses = Array.from({ length: 10 }, (_, index) => <IndividualHouse key={index} />);
-  const [show,setshow]=useState(false);
+  const [houses, setHouses] = useState([]);
+  const [searchTerm, setSearchTerm] = useState(''); // State for search term
+
+  useEffect(() => {
+    fetch('http://localhost:5000/api/property-data')
+      .then((response) => response.json())
+      .then((data) => {
+        setHouses(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching house data:", error);
+      });
+  }, []);
+
+  // Handle the change in the search input field
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  // Filter houses based on the search term
+  const filteredHouses = searchTerm
+    ? houses.filter((house) =>
+        house.Address.toLowerCase().includes(searchTerm.toLowerCase()) // Filtering based on city name in Address
+      )
+    : houses; // If no search term, return all houses
+
   return (
     <div className='main-content'>
       <div className='upper-rento'>
         <h1>Rento</h1>
       </div>
       <div className='middle-content'>
-        <div className='sort-button'>
-          <button onClick={()=>{setshow(true)}}>          
-            <img src={sortButton}></img>
-          </button>
-        </div>
         <div className='search-button'>
-        <TextField
+          <TextField
             className='search-bar'
             placeholder="Search by City"
+            value={searchTerm} // Bind the input to searchTerm state
+            onChange={handleSearchChange} // Update searchTerm on input change
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -31,16 +51,20 @@ function ItemsDisplay() {
           />
         </div>
       </div>
-      <div className={`side-bar ${show? 'show':""}`}>
-        <SortComponent/>
-      </div>
+
       <div className='lower-content'>
         <div className='house-content'>
-          {houses}
+          {filteredHouses.length > 0 ? (
+            filteredHouses.map((house) => (
+              <IndividualHouse key={house.Id} house={house} />
+            ))
+          ) : (
+            <p>No houses found for the given city.</p>
+          )}
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default ItemsDisplay
+export default ItemsDisplay;

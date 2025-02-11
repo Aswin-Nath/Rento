@@ -1,0 +1,100 @@
+  .house-details-container {
+    padding: 20px;
+  }
+
+  /* Main Image and House Details Section */
+  .house-details-top {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .main-image {
+    width: 40%;
+    margin-right: 20px;
+  }
+
+  .main-image img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-height: 400px;
+  }
+
+  .house-details-info {
+    width: 60%;
+    border: 1px solid #ddd;
+    padding: 20px;
+    background: linear-gradient(135deg, #f2f7fa, #d1e6f3);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .house-details-info table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .house-details-info td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 16px;
+    color: #333;
+  }
+
+  .house-details-info td b {
+    color: #007bff;
+  }
+
+  .house-details-info tr:hover {
+    background-color: #e0efff;
+  }
+
+  .house-details-info td:last-child {
+    font-weight: bold;
+  }
+
+  .images-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .images-grid > div {
+    flex: 0 0 calc(33.33% - 30px); /* 3 items per row, accounting for the gap */
+  }
+
+  .images-grid img {
+    width: 300px;
+    height: 300px;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+  }
+  
+  .images-grid img:hover {
+    transform: scale(1.1); /* Increase the size by 10% when hovered */
+  }
+  
+
+  /* Tab Button Styles */
+  .tabs button {
+    background-color: black;
+    color: white;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .tabs button.active {
+    background-color: red;
+    color: white;
+  }
+
+  .tabs button:hover {
+    background-color: #333;
+  }
